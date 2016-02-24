@@ -1,4 +1,12 @@
-#!/bin/bash
-yum update -y
-yum install httpd php php-mysql -y
-service httpd start
+#cloud-config
+repo_update: true
+repo_upgrade: all
+
+packages:
+ - httpd
+ - php
+ - php-mysql
+
+runcmd:
+ - service httpd start
+ - chkconfig httpd on
