@@ -1,4 +1,4 @@
 #!/bin/bash
 yum update -y
-mkdir ~/testingbootscript
-cd ~/testingbootscript; touch syedtesting.txt
+yum install httpd php php-mysql -y
+service httpd start
